@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class rat{
+            name; weight; speed; status;
+            constructor(name,weight,speed){
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+                this.status = true;
+            }
+            sound(){
+                this.sound ='chít, chít';
+            }
+        }
+            class cat{
+                name; weight; maxspeed;
+                constructor(name,weight,maxspeed){
+                    this.name = name ;
+                    this.weight = weight;
+                    this.maxspeed = maxspeed;
+                    this.batchuot = false;
+                }
+                sound(){
+                    this.sound = "meo, meo";
+                }
+                catchrat(rat){
+                    if(this.maxspeed > rat.speed){
+                        alert('bat duoc chuot');
+                        this.batchuot = true;
+                    }
+                }
+                eat(rat){
+                    if(this.batchuot){
+                    rat.status = false;
+                    this.weight +=rat.weight;
+                }}
+            }
+            let rat1 = new rat('rat1',2,20);
+            let cat1 = new cat('cat1',20,29);
+            cat1.catchrat(rat1);
+            cat1.eat(rat1);
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: auto;
+        }
+
+        td {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="vebang"></div>
+    <script>
+        let check = true;
+        function veBang() {
+            let str = "<table border = '1'>";
+            for (i = 0; i < 20; i++) {
+                str += "<tr>";
+                for (let j = 0; j < 20; j++) {
+                    str += `<td onclick='tichx(${i},${j})' id='o${i}${j}'>${arr[i][j]}</td>`;
+                }
+                str += "</tr>";
+            }
+            str += "</table>";
+            document.getElementById("vebang").innerHTML = str;
+            for (i = 0; i < 20; i++) {
+                for (j = 0; j < 20; j++) {
+                    if (arr[i][j] === "X" && arr[i - 1][j - 1] === 'X') {
+                        if (arr[i - 1][j - 1] === 'X' && arr[i - 2][j - 2] === "X") {
+                            if (arr[i - 3][j - 3] === 'X' && arr[i - 2][j - 2] === "X") {
+                                if (arr[i - 3][j - 3] === 'X' && arr[i - 4][j - 4] === "X") {
+                            alert('X thang');
+                        }
+                        }
+                        }
+                    }
+                }
+            }
+            for (i = 0; i < 20; i++) {
+                for (j = 0; j < 20; j++) {
+                    if (arr[i][j] === "X" && arr[i][j - 1] === 'X') {
+                        if (arr[i][j - 1] === 'X' && arr[i][j - 2] === "X") {
+                            if (arr[i][j - 3] === 'X' && arr[i][j - 2] === "X") {
+                                if (arr[i][j - 3] === 'X' && arr[i][j - 4] === "X") {
+                            alert('X thang');
+                        }
+                        }
+                        }
+                    }
+                }
+            }
+            for (i = 0; i < 20; i++) {
+                for (j = 0; j < 20; j++) {
+                    if (arr[i][j] === "X" && arr[i - 1][j] === 'X') {
+                        if (arr[i - 1][j] === 'X' && arr[i - 2][j] === "X") {
+                            if (arr[i - 3][j] === 'X' && arr[i - 2][j] === "X") {
+                                if (arr[i - 3][j] === 'X' && arr[i - 4][j] === "X") {
+                            alert('X thang');
+                        }
+                        }
+                        }
+                    }
+                }
+            }
+        }
+        function taoMang() {
+            let arr = [];
+            for (i = 0; i < 20; i++) {
+                arr[i] = [];
+                for (j = 0; j < 20; j++) {
+                    arr[i][j] = "";
+                }
+            }
+            return arr;
+        }
+        let arr = taoMang();
+        veBang();
+        function tichx(i, j) {
+            if (check && arr[i][j] == "") {
+                arr[i][j] = 'X';
+                check = !check;
+            } else if (arr[i][j] == "") {
+                arr[i][j] = 'O';
+                check = !check;
+            }
+            veBang();
+        }
+
+    </script>
+</body>
+
+</html>

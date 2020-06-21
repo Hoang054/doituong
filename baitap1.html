@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        let Rectangle = function (chdai,chrong){
+            this.chdai = chdai;
+            this.chrong = chrong;
+
+            this.layChdai= function(){
+                return chdai;
+            }
+            this.layChrong = function(){
+                return chrong;
+            }
+            this.tinhChuVi = function(){
+                return (chdai+chrong)*2;
+            }
+            this.tinhDienTich = function(){
+                return chdai*chrong;
+            }
+        };
+        var c = document.getElementById("myCanvas");
+        let chdaiNhap= +prompt("nhap chieu dai");
+        let chrongNhap = +prompt("nhap chieu rong");
+        let rectangle= new Rectangle(chdaiNhap,chrongNhap);
+        let dientich = rectangle.tinhDienTich();
+        let chuvi= rectangle.tinhChuVi();
+
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.rect(20, 20, chdaiNhap, chrongNhap);
+        ctx.stroke();
+        alert(dientich+','+chuvi)
+        </script> 
+</body>
+</html>

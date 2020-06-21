@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let Apple = function () {
+            this.weight = 10;
+            this.getweight = function () {
+                return weight;
+            }
+            this.decrease = function () {
+                this.weight--;
+            }
+            this.isEmpty = function () {
+                if (this.weight == 0) {
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+
+        };
+        let Human = function (name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+            this.isMale =function(){
+                if(this.gender){
+                    return 'Nam';
+                }else{
+                    return 'Nu';
+                }
+            }
+            this.setGender = function(bol){
+                this.gender = bol;
+            }
+            this.checkApple = function(apple){
+                return apple.isEmpty();
+            }
+            this.eat = function(apple){
+                apple.decrease();
+            }
+            this.say =function(){
+                return 'ok';
+            }
+            this.getName = function(){
+                return this.name;
+            }
+            this.setName = function(name){
+                this.name = name;
+            }
+            this.getweight = function(){
+                return this.weight;
+            }
+            this.setWeight = function(weight){
+                this.weight=weight
+            }
+        }
+        let adam = new Human('Adam',true,59);
+        let eva = new Human('Eva',false,45);
+        let tao1 = new Apple();
+        while(true){
+            if(tao1.isEmpty()){
+                adam.eat(tao1);
+                console.log("adam")
+            }
+            if(tao1.isEmpty()){
+                eva.eat(tao1);
+                console.log("eva")
+            }
+            if(tao1.weight==0){
+                break   ;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

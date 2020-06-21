@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class remote{
+            code;
+            constructor(code){
+                this.code = code;
+            }
+            controlChannel(tivi,channel){
+                tivi.changeChannel(channel);
+            }
+            controlVolumeUp(tivi){
+                tivi.changeVolumeUp();
+            }
+            controlVolumeDown(tivi){
+                tivi.changeVolumeDown();
+            }
+            controlturn(tivi){
+                if(tivi.status){
+                    tivi.status = false;
+                }else{
+                    tivi.status = true;
+                }
+            }
+        }
+        class tivi{
+            channel; volume; status; code;
+            constructor(){
+                this.channel;
+                this.volume = 25;
+                this.status = false;
+                }
+                changeChannel(channel){
+                    if(this.status){
+                    this.channel = channel;}
+                }
+                changeVolumeUp(){
+                    if(this.status){
+                    this.volume++;}
+                }
+                changeVolumeDown(){
+                    if(this.status){
+                    this.volume--;}
+                }
+            }
+            let remote1 = new remote(72);
+            let tivi1 = new tivi();
+    </script>
+</body>
+</html>
